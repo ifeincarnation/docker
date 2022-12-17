@@ -1,4 +1,4 @@
-name: Ubuntu 22.04 - Docker Build
+name: Ubuntu latest - Docker Build
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
           context: ./
           file: ./docker_push
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ubuntu:22.04
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ubuntu:latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
